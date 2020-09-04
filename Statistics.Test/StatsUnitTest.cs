@@ -35,11 +35,11 @@ namespace Statistics.Test
         }
 
         [Fact]
-        public void ReportsNaNForOneOrMoreNaNValue()
+        public void ReportsNaNForMoreThanOneNaNValue()
         {
             var statsComputer = new StatsComputer();
             var computedStats = statsComputer.CalculateStatistics(
-                new List<float> {2.8F, float.Nan, 5.96F, 6.14F, 9.6F, float.NaN, float.NaN, 4.123F});
+                new List<float> {2.8F, float.NaN, 5.96F, 6.14F, 9.6F, float.NaN, float.NaN, 4.123F});
 
             float epsilon = 0.001F;
 
