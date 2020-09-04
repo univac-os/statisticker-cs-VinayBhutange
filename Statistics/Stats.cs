@@ -16,5 +16,6 @@ namespace Statistics
             this.min = float.NaN;
             this.max = float.NaN;
         }
+
     }
 }
