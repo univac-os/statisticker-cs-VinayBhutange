@@ -38,7 +38,8 @@ steps:
 - task: DotNetCoreCLI@2
   displayName: 'dotnet-test'
   inputs:
-    command: 'test'
+    command: test
+    projects: '**/Statistics.Test.csproj'
     arguments: '--configuration $(BuildConfiguration) --collect "Xplat Code coverage" --RunConfigurtion.DisableAppDomain=true'
 
 - script: 'dotnet tool install --global dotnet-reportgenerator-globaltool --version 4.5.8'  
