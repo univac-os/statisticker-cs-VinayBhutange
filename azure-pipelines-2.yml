@@ -21,7 +21,9 @@ steps:
   inputs:
     command: 'test'
 
+
 - task: PublishCodeCoverageResults@1
+  displayName: 'Publish code coverage report'
   inputs:
     codeCoverageTool: 'Cobertura'
-    summaryFileLocation: 
+    summaryFileLocation: '$(Build.SourcesDirectory)/**/coverage.cobertura.xml'
