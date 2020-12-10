@@ -31,6 +31,11 @@ steps:
     configuration: '$(buildConfiguration)'
 
 
-- task: DotNetCoreCLI@2
+# ...
+# do this after your tests have run
+
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
   inputs:
-    command: test
+    testRunner: VSTest
+    testResultsFiles: '**/*.trx'
